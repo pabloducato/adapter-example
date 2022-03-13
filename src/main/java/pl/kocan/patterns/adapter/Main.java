@@ -20,5 +20,12 @@ public class Main {
 
         continentalSocket.plugIn(adapter);
 
+        ContinentalDevice continentalDevice = () -> System.out.println("London calling to the underworld");
+
+        TwoWayAdapter twoWayAdapter = new TwoWayAdapter(ukRadio, continentalDevice);
+
+        continentalSocket.plugIn(twoWayAdapter);
+        ukSocket.plugIn(twoWayAdapter);
+
     }
 }
